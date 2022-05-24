@@ -15,7 +15,7 @@ import Logo from '../images/logo2.png'
 const classes = {
   main: {
     flexGrow: 1,
-    backgroundColor: '#F8BA1E',
+    backgroundColor: 'tan',
     height: '48.6rem',
   },
   mainImage: {
@@ -44,7 +44,33 @@ const classes = {
     borderRadius: '1% 0 0 1%',
     padding: '5px',
     boxShadow: '0px 0px 20px 1px #000000',
-    backgroundColor: '#FFF',
+    backgroundColor: '#56DEF4',
+  },
+  rightViewCard: {
+    height: '100%',
+    width: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+  },
+  rightViewCardInner: {
+    paddingTop: 130,
+  },
+  rightViewCardText: {
+    height: '60%',
+    width: '80%',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    margin: 'auto',
+    boxShadow: '0px 0px 20px 1px #000000',
+  },
+  cardText: {
+    padding: '20px 140px',
+    textAlign: 'center',
+    fontSize: 25,
+    fontFamily: 'Roboto',
+  },
+  cardTitle: {
+    textAlign: 'center',
+    paddingTop: 30,
+    fontFamily: 'Roboto',
   },
   button: {
     marginTop: '2rem',
@@ -68,7 +94,7 @@ const classes = {
   logoPaper: {
     borderRadius: 0,
     height: '7rem',
-    backgroundColor: '#000',
+    backgroundColor: '#FFF',
   },
   mainPaper: {
     height: '20rem',
@@ -80,13 +106,15 @@ const classes = {
     margin: 20,
     padding: 20,
     height: 550,
+    boxShadow: '0px 0px 20px 1px #000000',
+    backgroundColor: '#FFF',
   },
   paper: {
     padding: 20,
     textAlign: "center",
     color: "#1D3557",
     fontFamily: "Roboto",
-    backgroundColor: "#F1FAEE",
+    backgroundColor: "#F8BA1E",
   },
   gridItem: {
     justifyContent: "center",
@@ -111,7 +139,16 @@ const Home = () => {
         <Grid item xs={8} style={classes.rightView} >
           <Navbar />
           <Paper style={classes.mainImage}>
-            
+            <Paper style={classes.rightViewCard} >
+              <div style={classes.rightViewCardInner} >
+                <Paper style={classes.rightViewCardText}>
+                  <h2 style={classes.cardTitle} >
+                    Cookie of the Month!
+                  </h2>
+                  <p style={classes.cardText} >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac turpis egestas sed tempus urna. Ultrices neque ornare aenean euismod elementum nisi. Curabitur vitae nunc sed velit dignissim sodales. Vestibulum sed arcu non odio euismod. Facilisis mauris sit amet massa vitae tortor condimentum.</p>
+                </Paper>
+              </div>
+            </Paper>
           </Paper>
         </Grid>
       </Grid>

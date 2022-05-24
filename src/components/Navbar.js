@@ -10,17 +10,29 @@ const classes = {
         alignItems: 'center',
         height: 40,
         position: 'relative',
-        backgroundColor: '#FFF',
+        backgroundColor: '#56DEF4',
     },
     homeLink: {
         color: '#000',
         padding: '0 100px',
         textDecoration: 'none',
+        fontSize: '16px',
+        fontWeight: 'bold',
+        fontFamily: 'Roboto',
     },
     link: {
         color: '#000',
         padding: '0 100px',
         textDecoration: 'none',
+        fontFamily: "Roboto",
+        fontSize: '16px',
+        fontWeight: 'bold',
+    },
+    active: {
+        color: '#000',
+        padding: '0 100px',
+        textDecoration: 'none',
+        fontFamily: "Roboto",
     },
 }
 
@@ -34,10 +46,7 @@ const Navbar = () => {
             Menu
         </Link>
         <Link to='/about' style={classes.link} >
-            About Us
-        </Link>
-        <Link to='/contact' style={classes.link} >
-            Contact Us
+            Our Story
         </Link>
     </nav>
   )
