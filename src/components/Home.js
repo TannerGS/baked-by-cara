@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useRef, useEffect } from 'react'
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
+import Hidden from "@mui/material/Hidden";
 import { Link } from 'react-router-dom';
 
 // Component imports
@@ -24,14 +25,11 @@ const classes = {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    marginTop: 0,
   },
   logo: {
     height: 150,
-    marginLeft: '30%',
-    marginTop: -20,
-  },
-  homeLink: {
-
+    marginTop: -15,
   },
   leftView: {
   
@@ -94,6 +92,8 @@ const classes = {
   logoPaper: {
     borderRadius: 0,
     height: '7rem',
+    width: '100%',
+    textAlign: 'center',
     backgroundColor: '#FFF',
   },
   mainPaper: {
@@ -125,19 +125,24 @@ const Home = () => {
   return (
     <div style={classes.main}>
       <Grid container spacing={3}>
-        <Grid item xs={12} sm={7} md={5} lg={4}>
+        <Grid item xs={12} md={5} lg={4}>
           <Paper style={classes.logoPaper} >
             <Link to='/' style={classes.homeLink} >
               <img src={Logo} alt='Logo for Baked By Cara' style={classes.logo} />
             </Link>
+            <Hidden mdUp>
+              <Navbar />
+            </Hidden>
           </Paper>
           <Paper style={classes.formPaper} >
             <h1 style={classes.orderHeading} >Place an Order</h1>
             <UserForm />
           </Paper>
         </Grid>
-        <Grid item xs={12}sm={5} md={7} lg={8} style={classes.rightView} >
-          <Navbar />
+        <Grid item xs={12} md={7} lg={8} style={classes.rightView} >
+          <Hidden mdDown>
+            <Navbar />
+          </Hidden>
           <Paper style={classes.mainImage}>
             <Paper style={classes.rightViewCard} >
               <div style={classes.rightViewCardInner} >

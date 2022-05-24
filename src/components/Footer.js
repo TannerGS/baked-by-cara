@@ -22,12 +22,11 @@ const Footer = () => {
     <Box
         sx={{
             height: 270,
-            position: 'relative',
             backgroundColor: '#56DEF4',
             boxShadow: '0px 0px 20px 1px #000000',
         }}
     >
-        <Grid container>
+        <Grid container >
             <Grid item xs={12} md={6} lg={4} sx={{ padding: 2, textAlign: 'center', fontFamily: 'Roboto' }} >
                 <h3>Follow Us!</h3>
                 <Grid item sx={{ mt: 8, fontSize: 10 }}>
