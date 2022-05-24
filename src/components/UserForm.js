@@ -40,7 +40,7 @@ const UserForm = () => {
   const resetForm = () => {
     setTimeout(() => {
       setActiveStep(0)
-    }, "5000")
+    }, "10000")
   }
 
   return (
@@ -59,7 +59,7 @@ const UserForm = () => {
       {activeStep === steps.length ? (
         <React.Fragment>
           <Typography sx={{ mt: 12, mb: 12, mx: 10 }}>
-            Thank you for placing an order with Baked By Cara! You will receive an email shorty with exact price and delivery date.
+            Thank you for placing an order with Baked By Cara! You will receive an email shortly with exact price and delivery date.
           </Typography>
           {resetForm()}
         </React.Fragment>

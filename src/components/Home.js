@@ -125,7 +125,7 @@ const Home = () => {
   return (
     <div style={classes.main}>
       <Grid container spacing={3}>
-        <Grid item xs={4} style={classes.leftView} >
+        <Grid item xs={12} sm={7} md={5} lg={4}>
           <Paper style={classes.logoPaper} >
             <Link to='/' style={classes.homeLink} >
               <img src={Logo} alt='Logo for Baked By Cara' style={classes.logo} />
@@ -136,7 +136,7 @@ const Home = () => {
             <UserForm />
           </Paper>
         </Grid>
-        <Grid item xs={8} style={classes.rightView} >
+        <Grid item xs={12}sm={5} md={7} lg={8} style={classes.rightView} >
           <Navbar />
           <Paper style={classes.mainImage}>
             <Paper style={classes.rightViewCard} >
@@ -145,7 +145,7 @@ const Home = () => {
                   <h2 style={classes.cardTitle} >
                     Cookie of the Month!
                   </h2>
-                  <p style={classes.cardText} >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac turpis egestas sed tempus urna. Ultrices neque ornare aenean euismod elementum nisi. Curabitur vitae nunc sed velit dignissim sodales. Vestibulum sed arcu non odio euismod. Facilisis mauris sit amet massa vitae tortor condimentum.</p>
+                  <p style={classes.cardText} >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </Paper>
               </div>
             </Paper>
