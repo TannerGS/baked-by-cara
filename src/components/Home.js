@@ -3,7 +3,6 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Hidden from "@mui/material/Hidden";
 import { Link } from 'react-router-dom';
-import { styled } from '@mui/material/styles';
 
 // Component imports
 import Navbar from './Navbar'
@@ -96,7 +95,7 @@ const classes = {
   },
   formPaper: {
     margin: 20,
-    marginTop: 60,
+    marginTop: 20,
     padding: 20,
     height: 550,
     boxShadow: '0px 0px 20px 1px #000000',
