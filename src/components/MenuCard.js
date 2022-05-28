@@ -18,11 +18,9 @@ import Grid from "@mui/material/Grid";
 
 // Image imports
 import CookieImage from '../images/cookie.jpg'
+import Filler from '../images/filler.jpg'
 
 const classes = {
-  menuCard: {
-    
-  },
   cardText: {
     textAlign: 'center',
     fontFamily: 'Roboto',
@@ -38,8 +36,8 @@ const MenuCard = () => {
 
   return (
     <Grid container xs={10} sx={{ margin: 'auto' }}>
-      <Grid item xs={4} >
-        <Card sx={{ maxWidth: 345, m: 1 }}>
+      <Grid item xs={6} sm={4}  >
+        <Card sx={{ maxWidth: 200, height: 215, m: 0.5 }}>
           <CardHeader
             title="Chocolate Chip"
             subheader="Price: $25/dozen"
@@ -53,74 +51,79 @@ const MenuCard = () => {
           />
         </Card>
       </Grid>
-      <Grid item xs={4} style={classes.menuCard} >
-        <Card sx={{ maxWidth: 345, height: 248, m: 1 }}>
+      <Grid item xs={6} sm={4}  style={classes.menuCard} >
+        <Card sx={{ maxWidth: 200, height: 215, m: 0.5 }}>
           <CardHeader
             title="Peanut Butter"
-            subheader="Price: $23/dozen"
+            subheader="Sold Out!"
             style={classes.cardTitle}
           />
-          <CardContent sx={{ backgroundColor: 'gray' }} >
-            <h3 style={classes.cardText} >
-              Sold Out!
-            </h3>
-          </CardContent>
+          <CardMedia
+            component="img"
+            height="160"
+            image={Filler}
+            alt="Chocolate Chip Cookie"
+          />
         </Card>
       </Grid>
-      <Grid item xs={4} >
-        <Card sx={{ maxWidth: 345, height: 248, m: 1 }}>
+      <Grid item xs={6} sm={4}  >
+        <Card sx={{ maxWidth: 200, height: 215, m: 0.5 }}>
           <CardHeader
             title="Oatmeal Raisin"
-            subheader="Price: $19/dozen"
+            subheader="Sold Out!"
             style={classes.cardTitle}
           />
-          <CardContent sx={{ backgroundColor: 'gray' }} >
-            <h3 style={classes.cardText}>
-              Sold Out!
-            </h3>
-          </CardContent>
+          <CardMedia
+            component="img"
+            height="160"
+            image={Filler}
+            alt="Chocolate Chip Cookie"
+          />
         </Card>
       </Grid>
-      <Grid item xs={4} >
-        <Card sx={{ maxWidth: 345, height: 248, m: 1 }}>
+      <Grid item xs={6} sm={4}  >
+        <Card sx={{ maxWidth: 200, height: 215, m: 0.5 }}>
           <CardHeader
             title="White Chocolate"
-            subheader="Price: $27/dozen"
+            subheader="Sold Out!"
             style={classes.cardTitle}
           />
-          <CardContent sx={{ backgroundColor: 'gray' }} >
-            <h3 style={classes.cardText}>
-              Sold Out!
-            </h3>
-          </CardContent>
+          <CardMedia
+            component="img"
+            height="160"
+            image={Filler}
+            alt="Chocolate Chip Cookie"
+          />
         </Card>
       </Grid>
-      <Grid item xs={4} >
-        <Card sx={{ maxWidth: 345, height: 248, m: 1 }}>
+      <Grid item xs={6} sm={4}  >
+        <Card sx={{ maxWidth: 200, height: 215, m: 0.5 }}>
           <CardHeader
             title="Peanut Butter Almond"
-            subheader="Price: $22/dozen"
+            subheader="Sold Out!"
             style={classes.cardTitle}
           />
-          <CardContent sx={{ backgroundColor: 'gray' }} >
-            <h3 style={classes.cardText}>
-              Sold Out!
-            </h3>
-          </CardContent>
+          <CardMedia
+            component="img"
+            height="160"
+            image={Filler}
+            alt="Chocolate Chip Cookie"
+          />
         </Card>
       </Grid>
-      <Grid item xs={4} >
-        <Card sx={{ maxWidth: 345, height: 248, m: 1 }}>
+      <Grid item xs={6} sm={4}  >
+        <Card sx={{ maxWidth: 200, height: 215, m: 0.5 }}>
           <CardHeader
             title="Chocolate Brownies"
-            subheader="Price: $20/dozen"
+            subheader="Sold Out!"
             style={classes.cardTitle}
           />
-          <CardContent sx={{ backgroundColor: 'gray' }} >
-            <h3 style={classes.cardText}>
-              Sold Out!
-            </h3>
-          </CardContent>
+          <CardMedia
+            component="img"
+            height="160"
+            image={Filler}
+            alt="Chocolate Chip Cookie"
+          />
         </Card>
       </Grid>
     </Grid>

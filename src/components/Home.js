@@ -104,7 +104,7 @@ const classes = {
   },
   formPaperMd: {
     margin: 'auto',
-    padding: 20,
+    padding: '20px 18px',
     height: 550,
     width: '93%',
     boxShadow: '0px 0px 20px 1px #000000',

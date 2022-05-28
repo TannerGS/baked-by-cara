@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useRef, useEffect } from 'react'
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
+import Hidden from "@mui/material/Hidden";
 import { Link } from 'react-router-dom';
 
 // Component imports
 import Navbar from './Navbar'
 import UserForm from './UserForm'
+import MenuCard from './MenuCard'
 
 // Image imports 
 import Main from '../images/main.jpg'
@@ -14,50 +16,40 @@ import Logo from '../images/logo2.png'
 // Styles
 const classes = {
   main: {
-    flexGrow: 1,
     backgroundColor: 'tan',
-    height: '48.6rem',
   },
   mainImage: {
     backgroundImage: `url(${Main})`,
-    height: '92%',
+    height: '100%',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    marginTop: -18,
   },
   logo: {
     height: 150,
-    marginLeft: '30%',
     marginTop: -20,
-  },
-  homeLink: {
-
   },
   leftView: {
   
   },
   rightView: {
-    height: '47rem',
+    height: '47.9rem',
     marginTop: 0,
-    marginBottom: '0.7rem',
+    padding: 0,
     border: '1px solid #ddd',
     borderRadius: '1% 0 0 1%',
-    padding: '5px',
     boxShadow: '0px 0px 20px 1px #000000',
     backgroundColor: '#56DEF4',
   },
   rightViewCard: {
     height: '100%',
-    width: '100%',
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
   },
   rightViewCardInner: {
-    height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    paddingTop: 80,
   },
   cardText: {
-    padding: '20px 140px',
+    padding: '20px 80px',
     textAlign: 'center',
     fontSize: 25,
     fontFamily: 'Roboto',
@@ -85,24 +77,32 @@ const classes = {
   orderHeading: {
     textAlign: 'center',
     fontFamily: "Roboto",
+    paddingTop: 10,
   },
   logoPaper: {
     borderRadius: 0,
     height: '7rem',
+    width: '100%',
+    textAlign: 'center',
     backgroundColor: '#FFF',
-  },
-  mainPaper: {
-    height: '20rem',
-    width: '40rem',
-    margin: 'auto',
-    backgroundColor: 'rgba(248, 186, 30, 0.2)',
   },
   formPaper: {
     margin: 20,
+    marginTop: 20,
     padding: 20,
     height: 550,
     boxShadow: '0px 0px 20px 1px #000000',
     backgroundColor: '#FFF',
+    position: 'relative',
+  },
+  formPaperMd: {
+    margin: 'auto',
+    padding: 20,
+    height: 550,
+    width: '93%',
+    boxShadow: '0px 0px 20px 1px #000000',
+    backgroundColor: '#FFF',
+    position: 'relative',
   },
   paper: {
     padding: 20,
@@ -119,29 +119,46 @@ const classes = {
 const About = () => {
   return (
     <div style={classes.main}>
-      <Grid container spacing={3}>
-        <Grid item xs={4} style={classes.leftView} >
+      <Grid container spacing={3} >
+        <Grid item xs={12} md={5} lg={4}>
           <Paper style={classes.logoPaper} >
             <Link to='/' style={classes.homeLink} >
               <img src={Logo} alt='Logo for Baked By Cara' style={classes.logo} />
             </Link>
+            <Hidden mdUp>
+              <Navbar />
+            </Hidden>
           </Paper>
-          <Paper style={classes.formPaper} >
-            <h1 style={classes.orderHeading} >Place an Order</h1>
-            <UserForm />
-          </Paper>
+          <Hidden mdDown>
+            <Paper style={classes.formPaper} >
+              <h1 style={classes.orderHeading} >Place an Order</h1>
+              <UserForm />
+            </Paper>
+          </Hidden>
         </Grid>
-        <Grid item xs={8} style={classes.rightView} >
-          <Navbar />
+        <Grid item xs={12} md={7} lg={8} style={classes.rightView} >
+          <Hidden mdDown>
+            <Navbar />
+          </Hidden>
           <Paper style={classes.mainImage}>
             <Paper style={classes.rightViewCard} >
-              <Paper style={classes.rightViewCardInner} >
-                <h2 style={classes.cardTitle} >
-                  Our Story
-                </h2>
-              </Paper>
+              <div style={classes.rightViewCardInner} >
+                <Paper sx={{ height: '30rem', width: '50%', m: 'auto' }} >
+                  <h2 style={classes.cardTitle} >
+                    Our Story
+                  </h2>
+                </Paper>
+              </div>
             </Paper>
           </Paper>
+          <Hidden mdUp >
+            <Grid item xs={12} >
+              <Paper style={classes.formPaperMd} >
+                <h1 style={classes.orderHeading} >Place an Order</h1>
+                <UserForm />
+              </Paper>
+            </Grid>
+          </Hidden>
         </Grid>
       </Grid>
     </div>

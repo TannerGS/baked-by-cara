@@ -40,11 +40,11 @@ const UserForm = () => {
   const resetForm = () => {
     setTimeout(() => {
       setActiveStep(0)
-    }, "10000")
+    }, "5000")
   }
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '97%' }}>
       <Stepper activeStep={activeStep}>
         {steps.map((label, index) => {
           const stepProps = {};
@@ -66,7 +66,7 @@ const UserForm = () => {
       ) : (
         <React.Fragment>
           {renderPage()}
-          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2, mt: 7 }}>
+          <Box sx={{ display: 'flex', flexDirection: 'row', px: 2, mt: 7 }}>
             <Button
               color="inherit"
               disabled={activeStep === 0}
