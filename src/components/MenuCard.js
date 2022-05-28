@@ -35,7 +35,7 @@ const classes = {
 const MenuCard = () => {
 
   return (
-    <Grid container xs={10} sx={{ margin: 'auto' }}>
+    <Grid container xs={10} sx={{ margin: {xs: 'auto',}, marginLeft: {lg: '7rem'} }}>
       <Grid item xs={6} sm={4}  >
         <Card sx={{ maxWidth: 200, height: 215, m: 0.5 }}>
           <CardHeader
