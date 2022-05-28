@@ -27,7 +27,7 @@ const classes = {
   },
   logo: {
     height: 150,
-    marginTop: -15,
+    marginTop: -20,
   },
   leftView: {
   
@@ -85,6 +85,7 @@ const classes = {
   orderHeading: {
     textAlign: 'center',
     fontFamily: "Roboto",
+    paddingTop: 10,
   },
   logoPaper: {
     borderRadius: 0,
@@ -95,10 +96,21 @@ const classes = {
   },
   formPaper: {
     margin: 20,
+    marginTop: 60,
     padding: 20,
     height: 550,
     boxShadow: '0px 0px 20px 1px #000000',
     backgroundColor: '#FFF',
+    position: 'relative',
+  },
+  formPaperMd: {
+    margin: 'auto',
+    padding: 20,
+    height: 550,
+    width: '93%',
+    boxShadow: '0px 0px 20px 1px #000000',
+    backgroundColor: '#FFF',
+    position: 'relative',
   },
   paper: {
     padding: 20,
@@ -125,10 +137,12 @@ const Home = () => {
               <Navbar />
             </Hidden>
           </Paper>
-          <Paper style={classes.formPaper} >
-            <h1 style={classes.orderHeading} >Place an Order</h1>
-            <UserForm />
-          </Paper>
+          <Hidden mdDown>
+            <Paper style={classes.formPaper} >
+              <h1 style={classes.orderHeading} >Place an Order</h1>
+              <UserForm />
+            </Paper>
+          </Hidden>
         </Grid>
         <Grid item xs={12} md={7} lg={8} style={classes.rightView} >
           <Hidden mdDown>
@@ -146,6 +160,14 @@ const Home = () => {
               </div>
             </Paper>
           </Paper>
+          <Hidden mdUp >
+            <Grid item xs={12} >
+              <Paper style={classes.formPaperMd} >
+                <h1 style={classes.orderHeading} >Place an Order</h1>
+                <UserForm />
+              </Paper>
+            </Grid>
+          </Hidden>
         </Grid>
       </Grid>
     </div>

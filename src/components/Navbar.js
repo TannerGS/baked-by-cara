@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 const Root = styled('nav')(({ theme }) => ({
     display: 'flex',
     flex: 1,
-    marginTop: -30,
+    marginTop: -23,
     justifyContent: 'center',
     alignItems: 'center',
     height: 40,
