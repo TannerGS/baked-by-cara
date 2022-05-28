@@ -36,7 +36,7 @@ const classes = {
     },
     homeLink: {
         color: '#000',
-        padding: '0 10px',
+        padding: '0 30px',
         textDecoration: 'none',
         fontSize: '16px',
         fontWeight: 'bold',
@@ -44,17 +44,11 @@ const classes = {
     },
     link: {
         color: '#000',
-        padding: '0 10px',
+        padding: '0 30px',
         textDecoration: 'none',
         fontFamily: "Roboto",
         fontSize: '16px',
         fontWeight: 'bold',
-    },
-    active: {
-        color: '#000',
-        padding: '0 100px',
-        textDecoration: 'none',
-        fontFamily: "Roboto",
     },
 }
 
