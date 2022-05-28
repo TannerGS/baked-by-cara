@@ -13,37 +13,14 @@ import UserForm from './UserForm'
 import Main from '../images/main.jpg'
 import Logo from '../images/logo2.png'
 
-const RightView = styled('div')(({ theme }) => ({
-  height: '47rem',
-  marginTop: 0,
-  marginBottom: '0.7rem',
-  border: '1px solid #ddd',
-  borderRadius: '1% 0 0 1%',
-  padding: 0,
-  boxShadow: '0px 0px 20px 1px #000000',
-  backgroundColor: '#56DEF4',
-  [theme.breakpoints.up('md')]: {
-    height: '47rem',
-    marginTop: 0,
-    marginBottom: '0.7rem',
-    border: '1px solid #ddd',
-    borderRadius: '1% 0 0 1%',
-    padding: '5px',
-    boxShadow: '0px 0px 20px 1px #000000',
-    backgroundColor: '#56DEF4',
-  },
-}));
-
 // Styles
 const classes = {
   main: {
     backgroundColor: 'tan',
-    height: '48.6rem',
-    width: '100%',
   },
   mainImage: {
     backgroundImage: `url(${Main})`,
-    height: '92%',
+    height: '100%',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
@@ -56,9 +33,8 @@ const classes = {
   
   },
   rightView: {
-    height: '47rem',
+    height: '47.9rem',
     marginTop: 0,
-    marginBottom: '0.7rem',
     padding: 0,
     border: '1px solid #ddd',
     borderRadius: '1% 0 0 1%',
@@ -67,8 +43,8 @@ const classes = {
   },
   rightViewCard: {
     height: '100%',
-    width: '100%',
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    padding: 2,
   },
   rightViewCardInner: {
     paddingTop: 130,
@@ -81,7 +57,7 @@ const classes = {
     boxShadow: '0px 0px 20px 1px #000000',
   },
   cardText: {
-    padding: '20px 140px',
+    padding: '20px 80px',
     textAlign: 'center',
     fontSize: 25,
     fontFamily: 'Roboto',
@@ -116,12 +92,6 @@ const classes = {
     width: '100%',
     textAlign: 'center',
     backgroundColor: '#FFF',
-  },
-  mainPaper: {
-    height: '20rem',
-    width: '40rem',
-    margin: 'auto',
-    backgroundColor: 'rgba(248, 186, 30, 0.2)',
   },
   formPaper: {
     margin: 20,

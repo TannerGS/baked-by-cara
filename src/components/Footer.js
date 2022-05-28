@@ -12,9 +12,7 @@ import { styled } from '@mui/material/styles';
 
 const Root = styled('div')(({ theme }) => ({
     boxShadow: '0px 0px 20px 1px #000000',
-    marginTop: '45rem',
     width: '100%',
-
     [theme.breakpoints.up('md')]: {
         marginTop: 0,
     },
