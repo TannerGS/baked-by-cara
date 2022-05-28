@@ -47,6 +47,10 @@ const classes = {
   },
   rightViewCardInner: {
     paddingTop: 130,
+    marginLeft: {
+      xs: 20,
+      sm: 0,
+    },
   },
   rightViewCardText: {
     height: '60%',
@@ -149,14 +153,14 @@ const Home = () => {
           </Hidden>
           <Paper style={classes.mainImage}>
             <Paper style={classes.rightViewCard} >
-              <div style={classes.rightViewCardInner} >
+              <Grid item sx={{ pt: 13, ml: { xs: 2, sm: 0 } }} >
                 <Paper style={classes.rightViewCardText}>
                   <h2 style={classes.cardTitle} >
                     Cookie of the Month!
                   </h2>
                   <p style={classes.cardText} >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </Paper>
-              </div>
+              </Grid>
             </Paper>
           </Paper>
           <Hidden mdUp >

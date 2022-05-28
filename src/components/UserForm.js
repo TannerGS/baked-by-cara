@@ -44,7 +44,7 @@ const UserForm = () => {
   }
 
   return (
-    <Box sx={{ width: '97%' }}>
+    <Box sx={{ width: {xs: '100%', sm: '97%'} }}>
       <Stepper activeStep={activeStep}>
         {steps.map((label, index) => {
           const stepProps = {};

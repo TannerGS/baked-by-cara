@@ -47,7 +47,7 @@ const Footer = () => {
                 </Grid>
             </Grid>
             <Grid item xs={12} lg={4} sx={{ padding: 2, textAlign: 'center', fontFamily: 'Roboto', backgroundColor: '#56DEF4', }} >
-                <Paper sx={{ p: 2, mr: 2, backgroundColor: 'rgba(250, 250, 250, 0.7)' }} >
+                <Paper sx={{ p: 2, mr: {xs: 0, sm: 2}, backgroundColor: 'rgba(250, 250, 250, 0.7)' }} >
                     <h2>Join Our Newsletter!</h2>
                     <h4>Would you like to hear about our latest products and deals? Sign up for updates via email.</h4>
                     <span>
