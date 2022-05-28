@@ -3,6 +3,7 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Hidden from "@mui/material/Hidden";
 import { Link } from 'react-router-dom';
+import { styled } from '@mui/material/styles';
 
 // Component imports
 import Navbar from './Navbar'
@@ -12,12 +13,33 @@ import UserForm from './UserForm'
 import Main from '../images/main.jpg'
 import Logo from '../images/logo2.png'
 
+const RightView = styled('div')(({ theme }) => ({
+  height: '47rem',
+  marginTop: 0,
+  marginBottom: '0.7rem',
+  border: '1px solid #ddd',
+  borderRadius: '1% 0 0 1%',
+  padding: 0,
+  boxShadow: '0px 0px 20px 1px #000000',
+  backgroundColor: '#56DEF4',
+  [theme.breakpoints.up('md')]: {
+    height: '47rem',
+    marginTop: 0,
+    marginBottom: '0.7rem',
+    border: '1px solid #ddd',
+    borderRadius: '1% 0 0 1%',
+    padding: '5px',
+    boxShadow: '0px 0px 20px 1px #000000',
+    backgroundColor: '#56DEF4',
+  },
+}));
+
 // Styles
 const classes = {
   main: {
-    flexGrow: 1,
     backgroundColor: 'tan',
     height: '48.6rem',
+    width: '100%',
   },
   mainImage: {
     backgroundImage: `url(${Main})`,
@@ -25,7 +47,6 @@ const classes = {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    marginTop: 0,
   },
   logo: {
     height: 150,
@@ -38,9 +59,9 @@ const classes = {
     height: '47rem',
     marginTop: 0,
     marginBottom: '0.7rem',
+    padding: 0,
     border: '1px solid #ddd',
     borderRadius: '1% 0 0 1%',
-    padding: '5px',
     boxShadow: '0px 0px 20px 1px #000000',
     backgroundColor: '#56DEF4',
   },
@@ -124,7 +145,7 @@ const classes = {
 const Home = () => {
   return (
     <div style={classes.main}>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} >
         <Grid item xs={12} md={5} lg={4}>
           <Paper style={classes.logoPaper} >
             <Link to='/' style={classes.homeLink} >
