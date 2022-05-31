@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import InputLabel from '@mui/material/InputLabel';
@@ -6,17 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormHelperText from '@mui/material/FormHelperText';
 import Select from '@mui/material/Select';
 
-const Order = () => {
-    const [type, setType] = useState('')
-    const [amount, setAmount] = useState(0)
-
-    const handleChange = e => {
-        setAmount(e.target.value)
-    }
-    const handleChange1 = e => {
-        setType(e.target.value)
-    }
-
+const Order = ({ handleFormData, values }) => {
     return (
         <Box
         component="form"
@@ -33,10 +23,10 @@ const Order = () => {
                     <Select
                     label='type'
                     labelId='type'
-                    value={type}
-                    onChange={handleChange1}
+                    defaultValue={values.product}
+                    onChange={handleFormData('product')}
                     >
-                    <MenuItem value={1}>Chocolate Chip</MenuItem>
+                    <MenuItem value='Chocolate Chip'>Chocolate Chip</MenuItem>
                     </Select>
                 </span>
                 <InputLabel id='amount' sx={{ mt: 4, p: 2 }} >How many Cookies? (Dozens)</InputLabel>
@@ -44,8 +34,8 @@ const Order = () => {
                     <Select
                     label='amount'
                     labelId='amount'
-                    value={amount}
-                    onChange={handleChange}
+                    defaultValue={values.quantity}
+                    onChange={handleFormData('quantity')}
                     >
                     <MenuItem value={1}>1</MenuItem>
                     <MenuItem value={2}>2</MenuItem>

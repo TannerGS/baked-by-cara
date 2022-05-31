@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "bakedbycara",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\tanne\\OneDrive\\Desktop\\programming_projects\\work\\baked-by-cara-project\\baked-by-cara\\amplify\\backend\\api\\bakedbycara\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 30,
+      "apiKeyExpirationDate": "2022-06-29T23:35:58.989Z",
+      "keyDescription": "api key description"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "AWS_IAM"
+      }
+    ],
+    "conflictResolution": {
+      "defaultResolutionStrategy": {
+        "type": "AUTOMERGE"
+      }
+    }
+  }
+}
