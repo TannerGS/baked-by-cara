@@ -5,8 +5,6 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { API } from 'aws-amplify';
-import { createOrder as createOrderMutation } from '../graphql/mutations';
 
 // Component imports
 import Personal from './Personal'
@@ -18,31 +16,38 @@ const steps = ['Personal Information', 'Order', 'Payment'];
 const UserForm = () => {
   const [activeStep, setActiveStep] = useState(0);
 
-   //state for form data
-   const [formData, setFormData] = useState({
-    id: Math.floor(Math.random() * 1000000),
+  const [customer, setCustomer] = useState({
+    customerId: Math.floor(Math.random() * 1000000),
     name: "",
     address: "",
     phone: "",
     email: "",
+  })
+
+  const [order, setOrder] = useState({
+    orderId: Math.floor(Math.random() * 1000000),
+    customerId: customer.customerId,
     product: "",
     quantity: "",
     contact: "",
     payment: "",
   })
 
-  async function createOrder() {
-    if (!formData.name || !formData.address || !formData.phone || !formData.email || !formData.product || !formData.quantity || !formData.contact || !formData.payment) return;
-    await API.graphql({ query: createOrderMutation, variables: { input: formData }, authMode: 'API_KEY' });
-    setFormData('');
+  async function postCustomer() { 
+    
+  }
+
+  async function postOrder() { 
+
   }
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
     if(activeStep === steps.length - 1) {
-      console.log(formData);
-
-      createOrder();
+      console.log(customer);
+      console.log(order);
+      postCustomer();
+      postOrder();
     }
   };
 
@@ -56,29 +61,37 @@ const UserForm = () => {
   const { value } = e.target;
 
   //updating for data state taking previous state and then adding new value to create new object
-  setFormData(prevState => ({
-    ...prevState,
-    [input]: value
-  }));
+  if(e.target.ariaLabel) {
+      setCustomer(prevState => ({
+        ...prevState,
+        [input]: value
+      }));
+    } else {
+      setOrder(prevState => ({
+        ...prevState,
+        [input]: value
+      }));
+    }
   }
 
   const renderPage = () => {
     switch(activeStep) {
         case 0:
-            return <Personal handleFormData={handleInputData} values={formData} />
+            return <Personal handleFormData={handleInputData} values={{ customer, order}} />
         case 1:
-            return <Order handleFormData={handleInputData} values={formData} />
+            return <Order handleFormData={handleInputData} values={{ customer, order}} />
         case 2:
-            return <Payment handleFormData={handleInputData} values={formData} />
+            return <Payment handleFormData={handleInputData} values={{ customer, order}} />
         default:
-            return <Personal handleFormData={handleInputData} values={formData} />  
+            return <Personal handleFormData={handleInputData} values={{ customer, order}} />  
       }
   }
 
   const resetForm = () => {
     setTimeout(() => {
       setActiveStep(0);
-      setFormData('');
+      setCustomer('');
+      setOrder('');
     }, "5000")
   }
 

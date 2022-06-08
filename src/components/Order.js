@@ -24,6 +24,7 @@ const Order = ({ handleFormData, values }) => {
                     label='type'
                     labelId='type'
                     defaultValue={values.product}
+                    placeholder='product'
                     onChange={handleFormData('product')}
                     >
                     <MenuItem value='Chocolate Chip'>Chocolate Chip</MenuItem>
@@ -35,6 +36,7 @@ const Order = ({ handleFormData, values }) => {
                     label='amount'
                     labelId='amount'
                     defaultValue={values.quantity}
+                    placeholder='quantity'
                     onChange={handleFormData('quantity')}
                     >
                     <MenuItem value={1}>1</MenuItem>
