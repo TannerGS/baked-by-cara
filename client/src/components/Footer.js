@@ -33,13 +33,11 @@ const Footer = () => {
 
     const handleSubmit = (e) => { 
         e.preventDefault()
-        console.log(emailContent)
         postEmail(emailContent)
         setEmailContent({email: ''})
     }
 
     async function postEmail(emailContent) { 
-        console.log(emailContent)
         await axios.post('http://localhost:5000/api/emails', emailContent)
           .then((res) => {
               console.log(res.data)
