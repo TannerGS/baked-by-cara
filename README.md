@@ -6,10 +6,14 @@ Responsive webapp built using reactjs, and materialui for Baked By Cara.
 
 In the project directory, you can run:
 
-### `npm install`
-
 Install dependencies.
 
-### `npm start`
+### `cd client && npm install`
+
+### `cd server && npm install`
 
 Runs the app in the development mode.
+
+### `cd client && npm start`
+
+### `cd server && npm run dev`
