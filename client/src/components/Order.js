@@ -11,7 +11,7 @@ const Order = ({ handleFormData, values }) => {
         <Box
         component="form"
         sx={{
-            '& > :not(style)': { mt: 6 },
+            '& > :not(style)': { mt: { xs: 6, sm: 3.6, md: 6 } },
         }}
         noValidate
         autoComplete="off"

@@ -13,7 +13,7 @@ import axios from 'axios';
 const Root = styled('div')(({ theme }) => ({
     boxShadow: '0px 0px 20px 1px #000000',
     width: '100%',
-    marginTop: '36.5rem',
+    marginTop: '45rem',
     position: 'relative',
     [theme.breakpoints.up('md')]: {
         marginTop: 0,
