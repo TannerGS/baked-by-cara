@@ -27,7 +27,7 @@ const Personal = ({ handleFormData, values }) => {
             <Grid item sx={{ textAlign: 'center', margin: 'auto', pt: 4 }} >
                 <Input style={classes.input} defaultValue={values.name} placeholder='Name' onChange={handleFormData('name')} inputProps={ariaLabel} />
                 <Input style={classes.input} defaultValue={values.address} placeholder='Address' onChange={handleFormData('address')} inputProps={ariaLabel} />
-                <span><FormHelperText sx={{ textAlign: 'center' }} >Delivery ONLY available to the following zip codes: 12346, 12345, 12345, 12345, 12348</FormHelperText></span>
+                <span><FormHelperText sx={{ textAlign: 'center', pb: 2.5 }} >Delivery ONLY available to addresses in Greenville, Tx</FormHelperText></span>
                 <Input style={classes.input} defaultValue={values.phone} placeholder='Phone' onChange={handleFormData('phone')} inputProps={ariaLabel} />
                 <Input style={classes.input} defaultValue={values.email} placeholder='Email' onChange={handleFormData('email')} inputProps={ariaLabel} />
             </Grid>

@@ -1,7 +1,7 @@
 import emailjs from '@emailjs/browser';
 
 export const sendEmail = (content) => {
-    console.log(content)
+    console.log(`Content from sendEmail: ${content}`)
     emailjs.init(process.env.REACT_APP_USER_ID);
     emailjs.send(
       process.env.REACT_APP_SERVICE_ID,

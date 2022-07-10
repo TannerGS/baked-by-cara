@@ -42,7 +42,7 @@ const Payment = ({ handleFormData, values }) => {
                     <MenuItem value='Cash App'>Cash App</MenuItem>
                     <MenuItem value='Venmo'>Venmo</MenuItem>
                     </Select>
-                    <span><FormHelperText sx={{ textAlign: 'center', mt: 1 }} >Deliveries will be made on same Saturday if the order is placed prior to Friday.</FormHelperText></span>
+                    <span><FormHelperText sx={{ textAlign: 'center', mt: 1 }} >Deliveries will be made on same Saturday if the order is placed prior to noon on Friday.</FormHelperText></span>
                 </span>
             </Grid>
         </Grid>
