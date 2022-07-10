@@ -46,15 +46,15 @@ const classes = {
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
   },
   rightViewCardInner: {
-    paddingTop: 80,
+    paddingTop: 40,
   },
   storyPaper: {
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
   },
   cardText: {
-    padding: '20px 80px',
+    padding: '5px 20px',
     textAlign: 'center',
-    fontSize: 25,
+    fontSize: 23,
     fontFamily: 'Roboto',
   },
   cardTitle: {
@@ -107,13 +107,6 @@ const classes = {
     backgroundColor: '#FFF',
     position: 'relative',
   },
-  paper: {
-    padding: 20,
-    textAlign: "center",
-    color: "#1D3557",
-    fontFamily: "Roboto",
-    backgroundColor: "#F8BA1E",
-  },
   gridItem: {
     justifyContent: "center",
   }
@@ -146,10 +139,22 @@ const About = () => {
           <Paper style={classes.mainImage}>
             <Paper style={classes.rightViewCard} >
               <div style={classes.rightViewCardInner} >
-                <Paper  style={classes.storyPaper} sx={{ height: '30rem', width: '50%', m: 'auto' }} >
+                <Paper  style={classes.storyPaper} sx={{ height: {md: '32rem', lg: '30rem'}, width: {xs: '80%', sm: '60%', md: '75%', lg: '60%'}, m: 'auto', mt: {xs: 15, sm: 20, md: 0} }} >
                   <h2 style={classes.cardTitle} >
                     Our Story
                   </h2>
+                  <p style={classes.cardText} >
+                    A mother son duo, where one handles the business and the other handles the baking. We are Greenville, Tx locals looking to add some sweetness to good ole G'ville.
+                  </p>
+                  <p style={classes.cardText} >
+                    We can handle your cravings or caterings!
+                  </p>
+                  <p style={classes.cardText} >
+                    Lastly we want to thank you for shopping local and growing with our small business!
+                  </p>
+                  <p style={classes.cardText} >
+                    - the baker and the business man
+                  </p>
                 </Paper>
               </div>
             </Paper>

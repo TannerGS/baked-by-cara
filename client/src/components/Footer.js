@@ -26,6 +26,8 @@ const Footer = () => {
         email: '',
     })
 
+    const [submitted, setSubmitted] = useState(false);
+
     const handleChange = (value) => {
         setEmailContent({email: value})
     }
@@ -33,6 +35,10 @@ const Footer = () => {
     const handleSubmit = (e) => { 
         e.preventDefault()
         postEmail(emailContent)
+        setSubmitted(true);
+        setTimeout(() => {
+            setSubmitted(false);
+        }, 5000);
         setEmailContent({email: ''})
     }
 
@@ -51,8 +57,8 @@ const Footer = () => {
             <Grid item xs={12} md={5} sx={{ padding: 2, pt: 4, textAlign: 'center', fontFamily: 'Roboto', backgroundColor: '#FFF', }} >
                 <h2>Contact Us!</h2>
                 <Grid item sx={{ mt: 4 }}>
-                    <h4>Phone: (012) 345-6789</h4>
-                    <h4>Email: name@email.com</h4>
+                    <h4>Email: austin.cooper@bakedbycara.com</h4>
+                    <h3>Follow Us!</h3>
                     <Button>
                         <FacebookIcon />
                     </Button>
@@ -64,32 +70,40 @@ const Footer = () => {
                     </Button>
                 </Grid>
             </Grid>
-            <Grid item xs={12} md={7} sx={{ padding: 2, textAlign: 'center', fontFamily: 'Roboto', backgroundColor: '#FFF', }} >
-                <Paper sx={{ p: 2, mr: {xs: 0, sm: 2}, backgroundColor: 'rgba(86, 222, 244, 0.7)' }} >
-                    <h2>Join Our Newsletter!</h2>
-                    <h4>Would you like to hear about our latest products and deals? Sign up for updates via email.</h4>
-                    <form onSubmit={handleSubmit}>
-                        <span>
-                            <Grid item  >
-                            <TextField
-                                label="Email"
-                                id="outlined-size-small"
-                                value={emailContent.email}
-                                size="small"
-                                onChange={(e) => handleChange(e.target.value)}
-                            />
-                            </Grid>
-                        </span>
-                        <span>
-                            <Grid item >
-                                <Button
-                                    type='submit'
-                                >Subscribe</Button>
-                            </Grid>
-                        </span>
-                    </form>
-                </Paper>
-            </Grid>
+            {submitted ? (
+                <Grid item xs={12} md={7} sx={{ padding: 2, textAlign: 'center', fontFamily: 'Roboto', backgroundColor: '#FFF', }} >
+                    <Paper sx={{ p: {xs: 6.4, sm: 7, md: 8.09, lg: 7.3}, mr: {xs: 0, sm: 2}, backgroundColor: 'rgba(86, 222, 244, 0.7)' }} >
+                        <h4>Thank you for subscribing to the Baked By Cara Newsletter!</h4><h4> Check your email for updates on product information and promotions!</h4>
+                    </Paper>
+                </Grid>
+            ) : (
+                <Grid item xs={12} md={7} sx={{ padding: 2, textAlign: 'center', fontFamily: 'Roboto', backgroundColor: '#FFF', }} >
+                    <Paper sx={{ p: 2, mr: {xs: 0, sm: 2}, backgroundColor: 'rgba(86, 222, 244, 0.7)' }} >
+                        <h2>Join Our Newsletter!</h2>
+                        <h4>Would you like to hear about our latest products and deals? Sign up for updates via email.</h4>
+                        <form onSubmit={handleSubmit}>
+                            <span>
+                                <Grid item  >
+                                <TextField
+                                    label="Email"
+                                    id="outlined-size-small"
+                                    value={emailContent.email}
+                                    size="small"
+                                    onChange={(e) => handleChange(e.target.value)}
+                                />
+                                </Grid>
+                            </span>
+                            <span>
+                                <Grid item >
+                                    <Button
+                                        type='submit'
+                                    >Subscribe</Button>
+                                </Grid>
+                            </span>
+                        </form>
+                    </Paper>
+                </Grid>
+            )}
             <Grid item xs={12} sx={{ paddingTop: 0, paddingBottom: 1, textAlign: 'center', backgroundColor: '#FFF' }} >
             © 2022 Baked By Cara
             </Grid>

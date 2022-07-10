@@ -44,7 +44,6 @@ const classes = {
   rightViewCard: {
     height: '100%',
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
-    padding: 2,
   },
   rightViewCardInner: {
     paddingTop: 130,
@@ -59,11 +58,18 @@ const classes = {
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
     margin: 'auto',
     boxShadow: '0px 0px 20px 1px #000000',
+    marginTop: -20,
   },
   cardText: {
-    padding: '20px 80px',
+    padding: '2px 10px',
     textAlign: 'center',
-    fontSize: 25,
+    fontSize: 21,
+    fontFamily: 'Roboto',
+  },
+  cardTextAsterisk: {
+    padding: '8px 10px',
+    textAlign: 'center',
+    fontSize: 20,
     fontFamily: 'Roboto',
   },
   cardTitle: {
@@ -157,9 +163,12 @@ const Home = () => {
               <Grid item sx={{ pt: 13, ml: { xs: 2, sm: 0 } }} >
                 <Paper style={classes.rightViewCardText}>
                   <h2 style={classes.cardTitle} >
-                    Cookie of the Month!
+                    Welcome to our Grand Opening!
                   </h2>
-                  <p style={classes.cardText} >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <p style={classes.cardText} >Free Delivery every Saturday if ordered before noon on Friday!*</p>
+                  <p style={classes.cardText} >For catering orders of 5 or more dozen please contact me directly at austin.cooper@bakedbycara.com for special rates.</p>
+                  <p style={classes.cardTextAsterisk} >*Currently restricted to Greenville, Tx addresses only.</p>
+                  <p style={classes.cardTextAsterisk} >*Minimum purchase of $15.</p>
                 </Paper>
               </Grid>
             </Paper>

@@ -6,7 +6,11 @@ import Grid from "@mui/material/Grid";
 
 // Image imports
 import CookieImage from '../images/cookie.jpg'
-import Filler from '../images/filler.jpg'
+import PeanutImage from '../images/peanut.jpg'
+import OatmealImage from '../images/oatmeal.jpg'
+import SnickerdoodleImage from '../images/snickerdoodle.jpg'
+import VarietyImage from '../images/variety.jpg'
+import BrownieImage from '../images/brownies.jpg'
 
 const classes = {
   cardText: {
@@ -28,7 +32,7 @@ const MenuCard = () => {
         <Card sx={{ maxWidth: 200, height: 215, m: 0.5 }}>
           <CardHeader
             title="Chocolate Chip"
-            subheader="Price: $25/dozen"
+            subheader="$15/half dozen"
             style={classes.cardTitle}
           />
           <CardMedia
@@ -43,59 +47,59 @@ const MenuCard = () => {
         <Card sx={{ maxWidth: 200, height: 215, m: 0.5 }}>
           <CardHeader
             title="Peanut Butter"
-            subheader="Sold Out!"
+            subheader="$15/half dozen"
             style={classes.cardTitle}
           />
           <CardMedia
             component="img"
             height="160"
-            image={Filler}
-            alt="Chocolate Chip Cookie"
+            image={PeanutImage}
+            alt="Peanut Butter Cookies"
           />
         </Card>
       </Grid>
       <Grid item xs={6} sm={4}  >
         <Card sx={{ maxWidth: 200, height: 215, m: 0.5 }}>
           <CardHeader
-            title="Oatmeal Raisin"
-            subheader="Sold Out!"
+            title="Oatmeal Golden Raisin"
+            subheader="$15/half dozen"
             style={classes.cardTitle}
           />
           <CardMedia
             component="img"
             height="160"
-            image={Filler}
-            alt="Chocolate Chip Cookie"
+            image={OatmealImage}
+            alt="Oatmeal Golden Raisin"
           />
         </Card>
       </Grid>
       <Grid item xs={6} sm={4}  >
         <Card sx={{ maxWidth: 200, height: 215, m: 0.5 }}>
           <CardHeader
-            title="White Chocolate"
-            subheader="Sold Out!"
+            title="Snicker doodle"
+            subheader="$15/half dozen"
             style={classes.cardTitle}
           />
           <CardMedia
             component="img"
             height="160"
-            image={Filler}
-            alt="Chocolate Chip Cookie"
+            image={SnickerdoodleImage}
+            alt="Snickerdoodle"
           />
         </Card>
       </Grid>
       <Grid item xs={6} sm={4}  >
         <Card sx={{ maxWidth: 200, height: 215, m: 0.5 }}>
           <CardHeader
-            title="Peanut Butter Almond"
-            subheader="Sold Out!"
+            title="Variety 4 pack (one of each)"
+            subheader="$12"
             style={classes.cardTitle}
           />
           <CardMedia
             component="img"
             height="160"
-            image={Filler}
-            alt="Chocolate Chip Cookie"
+            image={VarietyImage}
+            alt="Variety pack of cookies"
           />
         </Card>
       </Grid>
@@ -109,8 +113,8 @@ const MenuCard = () => {
           <CardMedia
             component="img"
             height="160"
-            image={Filler}
-            alt="Chocolate Chip Cookie"
+            image={BrownieImage}
+            alt="Brownies"
           />
         </Card>
       </Grid>

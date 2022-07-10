@@ -8,6 +8,8 @@ import Typography from '@mui/material/Typography';
 
 import axios from 'axios';
 
+import {sendEmail} from '../utils/email.js'
+
 // Component imports
 import Personal from './Personal'
 import Order from './Order'
@@ -17,7 +19,6 @@ const steps = ['Personal Information', 'Order', 'Payment'];
 
 const UserForm = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const [posted, setPosted] = useState(false);
 
   const [customer, setCustomer] = useState({
     customerId: Math.floor(Math.random() * 1000000),
@@ -39,10 +40,8 @@ const UserForm = () => {
   async function postCustomer(customer) { 
     await axios.post('http://localhost:5000/api/customers', customer)
       .then((res) => {
-          setPosted(true)
           console.log(res.data)
       }).catch((error) => {
-          setPosted(false)
           console.log(error)
       });
   }
@@ -50,10 +49,8 @@ const UserForm = () => {
   async function postOrder(order) { 
     await axios.post('http://localhost:5000/api/orders', order)
       .then((res) => {
-          setPosted(true)
           console.log(res.data)
       }).catch((error) => {
-          setPosted(false)
           console.log(error)
       });
   }
@@ -65,6 +62,7 @@ const UserForm = () => {
       console.log(order);
       postCustomer(customer);
       postOrder(order);
+      sendEmail(order);
     }
   };
 
@@ -125,17 +123,10 @@ const UserForm = () => {
           );
         })}
       </Stepper>
-      {activeStep === steps.length && posted ? (
+      {activeStep === steps.length ? (
         <React.Fragment>
           <Typography sx={{ mt: 12, mb: 12, mx: 10 }}>
             Thank you for placing an order with Baked By Cara! You will receive an email shortly with exact price and delivery date.
-          </Typography>
-          {resetForm()}
-        </React.Fragment>
-      ) : activeStep === steps.length && !posted ? (
-        <React.Fragment>
-          <Typography sx={{ mt: 12, mb: 12, mx: 10 }}>
-            Please enter all fields to place an order!
           </Typography>
           {resetForm()}
         </React.Fragment>
