@@ -17,4 +17,6 @@ app.use('/api', routes)
 
 PORT = process.env.PORT || 8080;
 
+app.get('/', (req, res) => res.send('Baked by Cara Serving running!'))
+
 app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
