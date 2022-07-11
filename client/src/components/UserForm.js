@@ -123,7 +123,7 @@ const UserForm = () => {
       </Stepper>
       {activeStep === steps.length ? (
         <React.Fragment>
-          <Typography sx={{ mt: {xs: 18, sm: 12}, mb: 12, mx: 10, ml: {xs: 13} }}>
+          <Typography sx={{ mt: {xs: 18, sm: 12}, mb: 12, mx: 10, ml: {xs: 14} }}>
             Thank you for placing an order with Baked By Cara! You will receive an email shortly with exact price and delivery date.
           </Typography>
           {resetForm()}
