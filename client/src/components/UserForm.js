@@ -58,11 +58,12 @@ const UserForm = () => {
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
     if(activeStep === steps.length - 1) {
-      console.log(customer);
-      console.log(order);
       postCustomer(customer);
       postOrder(order);
-      sendEmail(order);
+      for(let key in order) {
+        console.log(key + ":", order[key]);
+      }
+      sendEmail(customer, order);
     }
   };
 
