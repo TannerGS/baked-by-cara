@@ -58,12 +58,9 @@ const UserForm = () => {
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
     if(activeStep === steps.length - 1) {
-      postCustomer(customer);
-      postOrder(order);
-      for(let key in order) {
-        console.log(key + ":", order[key]);
-      }
-      sendEmail(customer, order);
+      //postCustomer(customer);
+      //postOrder(order);
+      //sendEmail(customer, order);
     }
   };
 
@@ -126,7 +123,7 @@ const UserForm = () => {
       </Stepper>
       {activeStep === steps.length ? (
         <React.Fragment>
-          <Typography sx={{ mt: 12, mb: 12, mx: 10 }}>
+          <Typography sx={{ mt: {xs: 18, sm: 12}, mb: 12, mx: 10, ml: {xs: 13} }}>
             Thank you for placing an order with Baked By Cara! You will receive an email shortly with exact price and delivery date.
           </Typography>
           {resetForm()}
