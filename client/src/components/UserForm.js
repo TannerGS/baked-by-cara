@@ -134,7 +134,7 @@ const UserForm = () => {
       ) : (
         <React.Fragment>
           {renderPage()}
-          <Box sx={{ display: 'flex', flexDirection: 'row', px: 2, mt: 7 }}>
+          <Box sx={{ display: 'flex', flexDirection: 'row', px: 2, mt: 4 }}>
             <Button
               color="inherit"
               disabled={activeStep === 0}
