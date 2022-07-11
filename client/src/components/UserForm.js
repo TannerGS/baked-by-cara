@@ -58,9 +58,9 @@ const UserForm = () => {
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
     if(activeStep === steps.length - 1) {
-      //postCustomer(customer);
-      //postOrder(order);
-      //sendEmail(customer, order);
+      postCustomer(customer);
+      postOrder(order);
+      sendEmail(customer, order);
     }
   };
 
