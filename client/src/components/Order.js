@@ -28,6 +28,10 @@ const Order = ({ handleFormData, values }) => {
                     onChange={handleFormData('product')}
                     >
                     <MenuItem value='Chocolate Chip'>Chocolate Chip</MenuItem>
+                    <MenuItem value='Peanut Butter'>Peanut Butter</MenuItem>
+                    <MenuItem value='Oatmeal Golden Raisin'>Oatmeal Golden Raisin</MenuItem>
+                    <MenuItem value='Snickerdoodle'>Snickerdoodle</MenuItem>
+                    <MenuItem value='Variety Pack'>Variety Pack</MenuItem>
                     </Select>
                 </span>
                 <InputLabel id='amount' sx={{ mt: 0, p: 2 }} >How many Cookies? (Dozens)</InputLabel>
