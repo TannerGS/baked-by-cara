@@ -37,8 +37,16 @@ const UserForm = () => {
     payment: "",
   })
 
+  const prod = true
+
+  let url = 'http://localhost:5000/'
+
+  if (prod) {
+      url = 'https://baked-by-cara-server.herokuapp.com/'
+  } 
+
   async function postCustomer(customer) { 
-    await axios.post('http://localhost:5000/api/customers', customer)
+    await axios.post(`${url}api/customers`, customer)
       .then((res) => {
           console.log(res.data)
       }).catch((error) => {
@@ -47,7 +55,7 @@ const UserForm = () => {
   }
 
   async function postOrder(order) { 
-    await axios.post('http://localhost:5000/api/orders', order)
+    await axios.post(`${url}api/orders`, order)
       .then((res) => {
           console.log(res.data)
       }).catch((error) => {

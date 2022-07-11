@@ -28,6 +28,14 @@ const Footer = () => {
 
     const [submitted, setSubmitted] = useState(false);
 
+    const prod = true
+
+    let url = 'http://localhost:5000/'
+
+    if (prod) {
+        url = 'https://baked-by-cara-server.herokuapp.com/'
+    } 
+
     const handleChange = (value) => {
         setEmailContent({email: value})
     }
@@ -43,7 +51,7 @@ const Footer = () => {
     }
 
     async function postEmail(emailContent) { 
-        await axios.post('http://localhost:5000/api/emails', emailContent)
+        await axios.post(`${url}api/emails`, emailContent)
           .then((res) => {
               console.log(res.data)
           }).catch((error) => {
